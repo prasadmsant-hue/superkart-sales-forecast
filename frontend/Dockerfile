@@ -9,7 +9,7 @@ COPY . .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Hugging Face runs the container as a non-root user, so Streamlit gets a writable home directory
+# Give Streamlit a writable home directory for its configuration files
 ENV HOME=/tmp
 
 # Run the Streamlit app on port 8501, reachable from outside the container.
